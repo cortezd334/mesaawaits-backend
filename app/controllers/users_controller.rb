@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     end
 
     def create
-        byebug
         user = User.create(user_params)
         render json: user
     end
@@ -22,6 +21,8 @@ class UsersController < ApplicationController
         user.destroy
         render json: {error: 'Your account has been deleted'}
     end
+
+    
 
     private
     def user_params
