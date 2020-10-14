@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :favorites
-  resources :reservations
+  resources :reservations, only: [:index, :create]
   resources :restaurants
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post '/search', to: 'yelp#search'
   get '/search', to: 'yelp#search'
   post '/login', to: 'auth#login'
+  get '/persist', to: 'users#persist'
 end
