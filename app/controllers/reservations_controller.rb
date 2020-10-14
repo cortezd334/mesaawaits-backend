@@ -1,5 +1,7 @@
 class ReservationsController < ApplicationController
 
+    before_action :authorized, only: [:create]
+
     def index
         reservations = Reservation.all
         render json: reservations
@@ -11,9 +13,13 @@ class ReservationsController < ApplicationController
     end
 
     def create
-        reservation = Reservation.create(reservation_params)
+        # if User and Restaurant make res
+        # reservation = Reservation.create(reservation_params)
+        reservation = Reservation.create(date: params[:date], party_size: params[:partySize], special_occasion: params[:occasion], notes: params[:notes], restaurant_id: 1, user_id: @user.id)
         render json: reservation
+        #else render json: {error: ''}
     end
+    #name and time are not included cuz not in db
 
     def update
         reservation = Reservation.find(params[:id])
