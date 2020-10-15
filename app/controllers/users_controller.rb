@@ -14,6 +14,7 @@ class UsersController < ApplicationController
             render json: user
         else
             render json: {error: 'Unable to create an account'}
+            render json: {error: 'Unable to create an account'}
         end
     end
 
