@@ -1,3 +1,3 @@
 class RestaurantSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes %i[id name cuisine rating latitude longitude image]
 end
