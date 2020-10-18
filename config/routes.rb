@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post '/search', to: 'yelp#search'
   get '/search', to: 'yelp#search'
+  post '/geoSearch', to: 'yelp#geoSearch'
+  get '/geoSearch', to: 'yelp#geoSearch'
   post '/login', to: 'auth#login'
   get '/persist', to: 'users#persist'
 end
