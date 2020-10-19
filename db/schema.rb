@@ -25,9 +25,11 @@ ActiveRecord::Schema.define(version: 2020_10_08_165027) do
   end
 
   create_table "reservations", force: :cascade do |t|
+    t.string "name"
     t.datetime "date"
+    t.string "time"
     t.integer "party_size"
-    t.boolean "special_occasion"
+    t.boolean "occasion"
     t.text "notes"
     t.bigint "restaurant_id", null: false
     t.bigint "user_id", null: false
@@ -55,7 +57,6 @@ ActiveRecord::Schema.define(version: 2020_10_08_165027) do
     t.string "recovery_password_digest"
     t.integer "age"
     t.string "email"
-    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
