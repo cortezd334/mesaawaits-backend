@@ -26,8 +26,8 @@
 #     debugger
 #     rest = Restaurant.create(name: restaurant.name, cuisine: [restaurant.categories.each do |cat| cat.title], rating: restaurant.rating, latitude: restaurant.coordinates.latitude, longitude: restaurant.coordinates.longitude, image: restaurant.image_url)
 
-d = User.create(name: 'danira', username: 'd', password: 'bacon', age: 30, email: 'd@gmail.com', location: '')
+d = User.create(name: 'danira', username: 'd', password: 'bacon', age: 30, email: 'd@gmail.com')
 
 rest = Restaurant.create(name: 'DinTai', cuisine: 'chinese', rating: 4, latitude: 0, longitude: 0, image: 'https://s3-media1.fl.yelpcdn.com/bphoto/ZyQjV-wJQ2GHyX7l3jfbyg/o.jpg')
 
-res = Reservation.create(date: '2020-11-29', party_size: 4, special_occasion: 'none', notes: 'feed me', restaurant_id: 1, user_id: 1)
+res = Reservation.create(date: '2020-11-29', party_size: 4, occasion: 'none', notes: 'feed me', restaurant_id: 1, user_id: 1)

@@ -7,7 +7,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :recovery_password_digest
       t.integer :age
       t.string :email
-      t.string :location
 
       t.timestamps
     end

@@ -13,13 +13,10 @@ class ReservationsController < ApplicationController
     end
 
     def create
-        # if User and Restaurant make res
-        # reservation = Reservation.create(reservation_params)
-        reservation = Reservation.create(date: params[:date], party_size: params[:partySize], special_occasion: params[:occasion], notes: params[:notes], restaurant_id: 1, user_id: @user.id)
+        reservation = Reservation.create(reservation_params)
         render json: reservation
         #else render json: {error: ''}
     end
-    #name and time are not included cuz not in db
 
     def update
         reservation = Reservation.find(params[:id])
@@ -35,6 +32,6 @@ class ReservationsController < ApplicationController
 
     private
     def reservation_params
-        params.require(:reservation).permit(:date, :party_size, :special_occasion, :notes, :restaurant_id, :user_id)
+        params.require(:reservation).permit(:name, :date, :time, :party_size, :occasion, :notes, :restaurant_id, :user_id)
     end
 end
