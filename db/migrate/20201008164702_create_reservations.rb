@@ -5,7 +5,7 @@ class CreateReservations < ActiveRecord::Migration[6.0]
       t.datetime :date
       t.string :time
       t.integer :party_size
-      t.boolean :occasion
+      t.string :occasion
       t.text :notes
       t.references :restaurant, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
