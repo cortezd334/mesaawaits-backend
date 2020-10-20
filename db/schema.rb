@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_165027) do
     t.datetime "date"
     t.string "time"
     t.integer "party_size"
-    t.boolean "occasion"
+    t.string "occasion"
     t.text "notes"
     t.bigint "restaurant_id", null: false
     t.bigint "user_id", null: false
