@@ -11,7 +11,10 @@ class FavoritesController < ApplicationController
     end
 
     def create
-        favorite = Favorite.create(favorite_params)
+        restaurant = Restaurant.find_restaurant(params)
+
+        favorite = Favorite.new(restaurant_id: restaurant.id, user_id: @user.id)
+            favorite.save
         render json: favorite
     end
 
