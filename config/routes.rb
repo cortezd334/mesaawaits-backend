@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :favorites
-  resources :reservations, only: [:index, :create]
+  resources :reservations, only: %i[index create destroy]
   resources :restaurants, only: %i[index show create update delete]
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
