@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     
-    before_action :authorized, only: [:persist]
+    skip_before_action :authorized, only: [:create]
 
     def show
         user = User.find(params[:id])
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :username, :age, :email, :location, :password, :recovery_password)
+        params.require(:user).permit(:name, :username, :age, :email, :password, :recovery_password)
         # params.permit(:name, :username, :age, :email, :location, :password, :recovery_password)
     end
 

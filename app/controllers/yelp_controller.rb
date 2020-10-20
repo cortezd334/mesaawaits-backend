@@ -1,4 +1,7 @@
 class YelpController < ApplicationController   
+
+    skip_before_action :authorized, only: [:search, :geoSearch]
+
     def search
         rest_cuisine = params[:cuisine]  
         rest_location = params[:location]  
