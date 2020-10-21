@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :reservations
-    has_many :favorites
+    has_many :reservations, dependent: :destroy
+    has_many :favorites, dependent: :destroy
     has_many :restaurants, through: :reservations
     has_many :restaurants, through: :favorites
 
@@ -8,6 +8,6 @@ class User < ApplicationRecord
     has_secure_password :recovery_password, validations: false
     #look into this later (recovery password, false)
 
-    validates :name, :username, :password, presence:true
+    validates :name, :username, presence:true
     validates :username, uniqueness: true
 end
