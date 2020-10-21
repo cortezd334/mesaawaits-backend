@@ -25,9 +25,10 @@ class ReservationsController < ApplicationController
     end
 
     def destroy
+        # byebug
         reservation = Reservation.find(params[:id])
         reservation.destroy
-        render json: {error: 'Your account has been deleted'}
+        render json: {error: 'Your reservation has been deleted'}
     end
 
     private

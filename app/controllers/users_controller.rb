@@ -20,11 +20,12 @@ class UsersController < ApplicationController
 
     def update
         user = User.find(params[:id])
-        user.update(user_params)
+        user.update(update_params)
         render json: user
     end
 
     def destroy
+        byebug
         user = User.find(params[:id])
         user.destroy
         render json: {error: 'Your account has been deleted'}
@@ -37,8 +38,12 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :username, :age, :email, :password, :recovery_password)
+        params.require(:user).permit(:name, :username, :age, :email, :password)
         # params.permit(:name, :username, :age, :email, :location, :password, :recovery_password)
+    end
+
+    def update_params
+        params.require(:user).permit(:name, :username, :age, :email)
     end
 
 end
