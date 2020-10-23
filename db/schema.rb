@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2020_10_08_165027) do
 
   create_table "reservations", force: :cascade do |t|
     t.string "name"
-    t.datetime "date"
-    t.string "time"
+    t.date "date"
+    t.time "time"
     t.integer "party_size"
     t.string "occasion"
     t.text "notes"
