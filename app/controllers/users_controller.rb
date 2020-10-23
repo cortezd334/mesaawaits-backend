@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        byebug
         user = User.find(params[:id])
         user.destroy
         render json: {error: 'Your account has been deleted'}
